@@ -1,15 +1,10 @@
-package com.weixin.web.controller;
-
+package com.weixin.util;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
-/**
- * 微信相关工具类
- */
 public class WeixinUtil {
-	
-	
+
 
 	
 	/**
@@ -28,5 +23,5 @@ public class WeixinUtil {
 			return key;
 		}
 	}
-	
+
 }

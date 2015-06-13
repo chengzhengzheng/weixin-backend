@@ -17,7 +17,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.mishu.cgwy</groupId>
+			<groupId>com.weixin</groupId>
 			<artifactId>core</artifactId>
 			<version>${project.version}</version>
 		</dependency>

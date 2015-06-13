@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.weixin.util.WeixinUtil;
 
 public class WeixinController {
 	private static final String TOKEN = "weixin";
