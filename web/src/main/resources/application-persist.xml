@@ -12,22 +12,7 @@
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
 	default-lazy-init="true">
 
-	<!-- 数据源配置,使用应用内的DBCP数据库连接池 -->
-	<!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		Connection Info
-		<property name="driverClassName" value="${driverClassName}" />
-
-		<property name="url"
-                  value="${databaseUrl}" />
-		<property name="username" value="${databaseUsername}" />
-		<property name="password" value="${databasePassword}" />
-
-		Connection Pooling Info
-		<property name="defaultAutoCommit" value="false" />
-		<property name="timeBetweenEvictionRunsMillis" value="3600000" />
-		<property name="minEvictableIdleTimeMillis" value="3600000" />
-	</bean> -->
+	
 
 	
  
