@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.weixin.profile.dto.Message;
 import com.weixin.profile.dto.Reply;
-import com.weixin.profile.dto.WeixinRequest;
+import com.weixin.profile.dto.WeixinCheckRequest;
 import com.weixin.profile.service.WeixinService;
 import com.weixin.util.WeixinConstants;
 import com.weixin.util.WeixinUtil;
@@ -17,7 +17,7 @@ public class WeixinFacade {
 	@Autowired
 	private WeixinService weixinService;
 
-	public boolean checkWeixinRequest(WeixinRequest request) {
+	public boolean checkWeixinRequest(WeixinCheckRequest request) {
 		String signature = request.getSignature();
 		String timestamp = request.getTimestamp();
 		String nonce = request.getNonce();
