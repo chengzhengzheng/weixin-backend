@@ -60,7 +60,7 @@ public class WeixinUtil {
 
 	public static String replyToXml(Reply reply) {
 		xstream.alias("xml", reply.getClass());
-
+		xstream.autodetectAnnotations(true); 
 		return xstream.toXML(reply);
 	}
 
