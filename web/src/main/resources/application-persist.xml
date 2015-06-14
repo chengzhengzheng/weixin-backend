@@ -17,8 +17,7 @@
 		<!-- Connection Info -->
 		<property name="driverClassName" value="${driverClassName}" />
 
-		<property name="url"
-                  value="${databaseUrl}" />
+		<property name="url" value="${databaseUrl}" />
 		<property name="username" value="${databaseUsername}" />
 		<property name="password" value="${databasePassword}" />
 
@@ -28,14 +27,14 @@
 		<property name="minEvictableIdleTimeMillis" value="3600000" />
 	</bean>
 
-	<!-- Jpa Entity Manager 配置  实体管理器配置 -->
+	<!-- Jpa Entity Manager 配置 实体管理器配置 -->
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
 		<property name="packagesToScan">
 			<list>
-				<value>com.mishu.cgwy</value>
+				<value>com.weixin</value>
 			</list>
 		</property>
 		<property name="jpaProperties">
@@ -69,7 +68,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
 
-	
- 
- </beans>
+
+
+</beans>
    
