@@ -29,4 +29,13 @@ public class WeixinCheckRequest {
 	public WeixinCheckRequest() {
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "WeixinCheckRequest [signature=" + signature + ", timestamp="
+				+ timestamp + ", nonce=" + nonce + ", echostr=" + echostr + "]";
+	}
+	
+	
+	
 }

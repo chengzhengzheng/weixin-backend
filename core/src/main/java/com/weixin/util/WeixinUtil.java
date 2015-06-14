@@ -20,8 +20,8 @@ import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.xml.PrettyPrintWriter;
 import com.thoughtworks.xstream.io.xml.XppDriver;
-import com.weixin.profile.dto.Message;
-import com.weixin.profile.dto.Reply;
+import com.weixin.profile.domain.Message;
+import com.weixin.profile.domain.Reply;
 
 
 
@@ -64,30 +64,32 @@ public class WeixinUtil {
 		return xstream.toXML(reply);
 	}
 
-	public static void main(String[] args) {
-		Reply reply = new Reply();
-		reply.setContent(Reply.WELCOME_CONTENT);
-		System.out.println(replyToXml(reply));
-	}
-
-	public static Message mapToMessage(Map<String, String> map) {
-		if (map == null)
-			return null;
-
-
+	public static  Message  mapToMessage(Map<String,String> map){
+		if(map == null) return null;
+		String msgType = map.get("MsgType");
 		Message message = new Message();
-
 		message.setToUserName(map.get("ToUserName"));
-
 		message.setFromUserName(map.get("FromUserName"));
-
-
-		message.setMsgType(map.get("MsgType"));
-
+		message.setCreateTime(new Date(Long.parseLong(map.get("CreateTime"))));
+		message.setMsgType(msgType);
 		message.setMsgId(map.get("MsgId"));
-
-		message.setContent(map.get("Content"));
-		
+		if(msgType.equals(Message.TEXT)){
+			message.setContent(map.get("Content"));
+		}else if(msgType.equals(Message.IMAGE)){
+			message.setPicUrl(map.get("PicUrl"));
+		}else if(msgType.equals(Message.LINK)){
+			message.setTitle(map.get("Title"));
+			message.setDescription(map.get("Description"));
+			message.setUrl(map.get("Url"));
+		}else if(msgType.equals(Message.LOCATION)){
+			message.setLocationX(map.get("Location_X"));
+			message.setLocationY(map.get("Location_Y"));
+			message.setScale(map.get("Scale"));
+			message.setLabel(map.get("Label"));
+		}else if(msgType.equals(Message.EVENT)){
+			message.setEvent(map.get("Event"));
+			message.setEventKey(map.get("EventKey"));
+		}
 		return message;
 	}
 
