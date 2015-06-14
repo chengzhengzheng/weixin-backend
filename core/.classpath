@@ -21,5 +21,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/xingdong/sts/aixuexiao-master/WebContent/WEB-INF/lib/xstream-1.3.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/aixuexiao-master/WebContent/WEB-INF/lib/xstream-1.3.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

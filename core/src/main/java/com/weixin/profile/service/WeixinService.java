@@ -1,4 +1,4 @@
-package com.weixin.profiile.service;
+package com.weixin.profile.service;
 
 import org.springframework.stereotype.Service;
 

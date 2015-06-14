@@ -1,4 +1,4 @@
-package com.weixin.profiile.dto;
+package com.weixin.profile.dto;
 
 import lombok.Data;
 
