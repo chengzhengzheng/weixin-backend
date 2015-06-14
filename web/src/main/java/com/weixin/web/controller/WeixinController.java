@@ -22,14 +22,14 @@ public class WeixinController {
 	private Logger logger = LoggerFactory.getLogger(WeixinController.class);
 	
 	// 微信公众平台验证url是否有效使用的接口
-	@RequestMapping(value = "/weixin", method = RequestMethod.GET,produces="text/html;charset=UTF-8")
+	@RequestMapping(value = "/weixin", method = RequestMethod.GET,produces="text/xml;charset=UTF-8")
 	@ResponseBody
 	public String initWeixinURL(WeixinCheckRequest request) {
 		return weixinFacade.checkSignature(request);
 	}
 
 	
-	@RequestMapping(value = "/weixin",method = RequestMethod.POST,produces="text/html;charset=UTF-8")
+	@RequestMapping(value = "/weixin",method = RequestMethod.POST,produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String replayMessage(HttpServletRequest request){
 		
