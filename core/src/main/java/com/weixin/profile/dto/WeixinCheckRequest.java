@@ -2,10 +2,15 @@ package com.weixin.profile.dto;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+
+
 import lombok.Data;
 
 @Data
 public class WeixinCheckRequest {
+	
+	
 	public WeixinCheckRequest(HttpServletRequest request) {
 		this.signature = request.getParameter("signature");
 		this.timestamp = request.getParameter("timestamp");

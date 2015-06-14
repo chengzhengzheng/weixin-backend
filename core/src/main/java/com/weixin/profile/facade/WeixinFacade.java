@@ -1,7 +1,7 @@
 package com.weixin.profile.facade;
 
-import java.util.Date;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +14,7 @@ import com.weixin.util.WeixinUtil;
 
 @Service
 public class WeixinFacade {
+	private Logger logger = LoggerFactory.getLogger(WeixinFacade.class);
 	@Autowired
 	private WeixinService weixinService;
 
@@ -46,9 +47,11 @@ public class WeixinFacade {
 		reply.setCreateTime(message.getCreateTime());
 		reply.setMsgType(Reply.TEXT);
 		reply.setContent(replyContent);
+		System.out.println("WeixinFacade:"+replyContent);
 
 		// 将回复消息序列化为xml形式
 		String back = WeixinUtil.replyToXml(reply);
+		logger.warn("WeixinFacade:"+back);
 		System.out.println(back);
 		return back;
 	}
