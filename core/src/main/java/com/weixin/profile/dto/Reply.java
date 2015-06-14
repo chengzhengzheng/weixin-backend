@@ -13,7 +13,7 @@ public class Reply {
 	public static final String TEXT = "text";
 	
 	
-	public static final String WELCOME_CONTENT = "欢迎来到学生交流社区平台";
+	public static final String WELCOME_CONTENT = "welcome to the student commiunication:";
 
 	
 	// 开发者微信号  

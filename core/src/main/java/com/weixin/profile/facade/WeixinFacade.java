@@ -39,20 +39,19 @@ public class WeixinFacade {
 	}
 
 	public String replay(Message message) {
-		String replyContent = Reply.WELCOME_CONTENT;
+		
 		// 拼装回复消息
 		Reply reply = new Reply();
 		reply.setToUserName(message.getFromUserName());
 		reply.setFromUserName(message.getToUserName());
 		reply.setCreateTime(message.getCreateTime());
 		reply.setMsgType(Reply.TEXT);
-		reply.setContent(replyContent);
-		System.out.println("WeixinFacade:"+replyContent);
+		reply.setContent(message.getContent()+Reply.TEXT);
+		
 
 		// 将回复消息序列化为xml形式
 		String back = WeixinUtil.replyToXml(reply);
 		logger.warn("WeixinFacade:"+back);
-		System.out.println(back);
 		return back;
 	}
 
